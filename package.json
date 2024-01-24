@@ -1,0 +1,22 @@
+{
+  "name": "slivue",
+  "version": "1.0.0",
+  "description": "A init ",
+  "main": "index.js",
+  "bin": {
+    "slivue": "/bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaybeJustLikeThis/sliVue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaybeJustLikeThis/sliVue/issues"
+  },
+  "homepage": "https://github.com/MaybeJustLikeThis/sliVue#readme"
+}
