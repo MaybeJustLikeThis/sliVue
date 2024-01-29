@@ -32,7 +32,7 @@ program
   .description("inspect config")
   .option("-g, --get <path>", "get value")
   .option("-s, --set <path> <value>", "set value")
-  .option("-d, --delete<path>", "delete value")
+  .option("-d, --delete <path>", "delete value")
   .action(async (value, option) => {
     (await import("./commands/config.js")).default(value, option);
   });
