@@ -11,6 +11,7 @@ import { existsSync, rmSync } from "fs";
 import path from "path";
 import inquirer from "inquirer";
 import { warpLoading } from "../utils/loading.js";
+import download from "download-git-repo";
 export default function (name, option) {
     return __awaiter(this, void 0, void 0, function* () {
         const cwd = process.cwd(); //获取当前项目的工作目录
@@ -41,6 +42,22 @@ export default function (name, option) {
                     });
                 }
             }
+        }
+        if (!existsSync(targetDir)) {
+            // 为后续增加模板留口
+            // const downloadUrl = templateMap.get();
+            const downloadUrl = "https://github.com:MaybeJustLikeThis/slivue-template#main";
+            download(downloadUrl, name, { clone: true }, (error) => {
+                if (!error) {
+                    return warpLoading("create", () => {
+                        console.log(`成功创建项目：${name}`);
+                    });
+                }
+                else {
+                    console.log(`创建项目失败：${name}`);
+                    console.log("失败原因：", error);
+                }
+            });
         }
     });
 }

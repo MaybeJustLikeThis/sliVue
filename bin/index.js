@@ -34,7 +34,7 @@ program
     .description("inspect config")
     .option("-g, --get <path>", "get value")
     .option("-s, --set <path> <value>", "set value")
-    .option("-d, --delete<path>", "delete value")
+    .option("-d, --delete <path>", "delete value")
     .action((value, option) => __awaiter(void 0, void 0, void 0, function* () {
     (yield import("./commands/config.js")).default(value, option);
 }));
